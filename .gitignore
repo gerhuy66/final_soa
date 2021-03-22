@@ -1,8 +1,9 @@
 huyenv/
 migrations/
-app/_pycache_/
-app/database/_pycache_/
-app/forms/_pycache_/
-app/models/_pycache_/
-app/routes/_pycache_/
-app/services/_pycache_/
+app/__pycache__/
+app/database/__pycache__/
+app/forms/__pycache__/
+app/models/__pycache__/
+app/routes/__pycache__/
+app/services/__pycache__/
+.gitignore/
