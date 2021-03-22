@@ -6,7 +6,7 @@ from flask_bootstrap import Bootstrap
 bootstrap = Bootstrap(app)
 
 from app.routes import views
-from app.models import User,Role,Tution,Student,His
+from app.models import User,Role,Tution,Student,His,cart_model,order_model,product_model
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 login_manager = LoginManager()
