@@ -1,0 +1,8 @@
+huyenv/
+migrations/
+app/_pycache_/
+app/database/_pycache_/
+app/forms/_pycache_/
+app/models/_pycache_/
+app/routes/_pycache_/
+app/services/_pycache_/
