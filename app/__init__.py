@@ -5,8 +5,9 @@ from flask_bootstrap import Bootstrap
 
 bootstrap = Bootstrap(app)
 
-from app.routes import views
-from app.models import User,Role,Tution,Student,His,cart_model,order_model,product_model
+from app.routes import views,product_view,order_view
+from app.models import User,Role
+from app.models import Product,Order,Order_Detail,Shop,Partner,Shipping
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 login_manager = LoginManager()
@@ -23,4 +24,4 @@ mysql_db.create_all()
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=mysql_db, User=User.User,Student = Student.Student, His = His.His)
+    return dict(db=mysql_db, User = User.User, Role = Role.Role, Product = Product,Shipping = Shipping, Order = Order, Order_Detail = Order_Detail)

@@ -7,3 +7,6 @@ app/models/__pycache__/
 app/routes/__pycache__/
 app/services/__pycache__/
 .gitignore/
+app/models/cart_model.py
+app/__pycache__/__init__.cpython-39.pyc
+.vscode/launch.json

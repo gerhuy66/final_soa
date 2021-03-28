@@ -3,13 +3,14 @@ from marshmallow.fields import Email
 from app import app
 from flask import json, render_template, request, session, Response,jsonify,redirect,url_for,flash,make_response
 from flask_login import login_required,login_user,logout_user,current_user
-from app.models import User,Student
+from app.models import User
 from app.forms import forms
 
 @app.route("/",methods=['GET','POST'])
 @login_required
 def index():
-    return render_template('index.html',current_user =current_user)
+    return render_template('home.html',current_user =current_user)
+
 
 @app.route("/login",methods=['GET','POST'])
 def login():
@@ -41,15 +42,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route("/getUserLoginInfo",methods=['GET'])
-@login_required
-def getUsrLogin():
-    
-    get_student = Student.Student.query.filter_by(email=current_user.email)
-    student_schema = Student.StudentSchema(many=True)
-    student = student_schema.dump(get_student)
 
-    return make_response(jsonify({"studentInfo":student}))
 
 @app.route("/getUsers",methods=['GET'])
 def getUsr():
@@ -58,12 +51,7 @@ def getUsr():
     users = user_schema.dump(get_users)
     return make_response(jsonify({"users": users}))
 
-@app.route("/getStudents",methods=['GET'])
-def getStudent():
-    get_stus = Student.Student.query.all()
-    student_schema = Student.StudentSchema(many=True)
-    students = student_schema.dump(get_stus)
-    return make_response(jsonify({"students": students}))
+
 
 @app.route("/createUsers",methods=['POST'])
 def createUsr():
@@ -73,12 +61,6 @@ def createUsr():
     rs = user_schema.dump(user.create())
     return make_response(jsonify({"user": rs}),201)
 
-@app.route("/createStudents",methods=['POST'])
-def createStu():
-    data = request.get_json()
-    stu_schema = Student.StudentSchema()
-    student = stu_schema.load(data)
-    rs = stu_schema.dump(student.create())
-    return make_response(jsonify({"student": rs}),201)
+
 
     

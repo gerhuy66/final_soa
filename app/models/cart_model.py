@@ -11,7 +11,7 @@ class Cart(mysql_db.Model):
     
 
     def __init__(self,c_id,quantity,total_cost):
-        self.c_id = c_ida
+        self.c_id = c_id
         self.quantity = quantity
         self.total_cost = total_cost
 
@@ -30,7 +30,7 @@ class Cart(mysql_db.Model):
     def __repr__(self):
         return '<Cart %r, %r, %r>' % (self.c_id, self.quantity, self.total_cost)
 
-class StudentSchema(ModelSchema):
+class Cart(ModelSchema):
     class Meta(ModelSchema.Meta):
         model = Cart
         sqla_session = mysql_db.session
