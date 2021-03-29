@@ -1,3 +1,4 @@
+from app.models.catagory_model import Catagory
 from app.database import mysql_db
 from marshmallow import fields
 from marshmallow_sqlalchemy import ModelSchema
@@ -12,6 +13,8 @@ class Product(mysql_db.Model):
     p_location = mysql_db.Column(mysql_db.String(50))
     c_id = mysql_db.Column(mysql_db.String(20))
     img_url = mysql_db.Column(mysql_db.String(100))
+    catagory_code = mysql_db.Column(mysql_db.String(20))
+    shop_id = mysql_db.Column(mysql_db.String(20))
 
     def __init__(self, p_id, p_name="", p_price=0, p_description="", p_location = "",c_id="",img_url=""):
         self.p_id = p_id
@@ -34,11 +37,13 @@ class Product(mysql_db.Model):
             "p_description":self.p_description,
             "p_location":self.p_location,
             "c_id":self.c_id,
-            "img_url": self.img_url
+            "img_url": self.img_url,
+            "catagory_id":self.catagory_code,
+            "shop_id": self.shop_id
         }
 
     def __repr__(self):
-        return '<Product %r, %r, %r, %r, %r, %r, %r>' % (self.p_id, self.p_name, self.p_price, self.p_description, self.p_location,self.c_id,self.img_url)
+        return '<Product %r, %r, %r, %r, %r, %r, %r, %r, %r>' % (self.p_id, self.p_name, self.p_price, self.p_description, self.p_location,self.c_id,self.img_url,self.catagory_code,self.shop_id)
 
 class ProductSchema(ModelSchema):
     class Meta(ModelSchema.Meta):
@@ -52,3 +57,5 @@ class ProductSchema(ModelSchema):
     p_location = fields.String(required=False)
     c_id = fields.String(required=False)
     img_url = fields.String(required=False)
+    catagory_code = fields.String(required=False)
+    shop_id = fields.String(required=False)

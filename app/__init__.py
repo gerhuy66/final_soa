@@ -2,12 +2,13 @@ from flask import Flask, json, render_template, request, session, Response,jsoni
 from flask_login import LoginManager
 app = Flask(__name__,static_url_path='/static')
 from flask_bootstrap import Bootstrap
-
+UPLOAD_FOLDER = './upload'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 bootstrap = Bootstrap(app)
 
 from app.routes import views,product_view,order_view
 from app.models import User,Role
-from app.models import Product,Order,Order_Detail,Shop,Partner,Shipping
+from app.models import Product,Order,Order_Detail,Shop,Partner,Shipping, Catagory
 app.secret_key = 'super secret key'
 app.config['SESSION_TYPE'] = 'filesystem'
 login_manager = LoginManager()
@@ -24,4 +25,4 @@ mysql_db.create_all()
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=mysql_db, User = User.User, Role = Role.Role, Product = Product,Shipping = Shipping, Order = Order, Order_Detail = Order_Detail)
+    return dict(db=mysql_db,Catagory= Catagory, User = User.User, Role = Role.Role, Product = Product,Shipping = Shipping, Order = Order, Order_Detail = Order_Detail)
