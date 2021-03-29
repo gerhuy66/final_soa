@@ -8,6 +8,7 @@ class Partner(mysql_db.Model):
     __tablename__ = 'partners'
     partner_id = mysql_db.Column(mysql_db.String(20),primary_key=True)
     user_id = mysql_db.Column(mysql_db.String(64))
+    status = mysql_db.Column(mysql_db.String(50))
 
     def __init__(self, partner_id,user_id):
         self.partner_id = partner_id
@@ -20,7 +21,7 @@ class Partner(mysql_db.Model):
         return self
 
     def __repr__(self):
-        return '<Partner %r, %r>' % (self.partner_id,self.user_id)
+        return '<Partner %r, %r, %r>' % (self.partner_id,self.user_id, self.status)
 
 class PartnerSchema(ModelSchema):
     class Meta(ModelSchema.Meta):
@@ -28,4 +29,5 @@ class PartnerSchema(ModelSchema):
         sqla_session = mysql_db.session
     partner_id = fields.String(dump_only=True)
     user_id = fields.String()
+    status = fields.String()
 
