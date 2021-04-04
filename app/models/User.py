@@ -26,7 +26,7 @@ class User(UserMixin, mysql_db.Model):
         self.balance = balance
 
     def __repr__(self):
-        return '<User %r,%r,%r,%r,%r>' % (self.username,self.email,self.username,self.password_hash,self.balance)
+        return '<User %r,%r%r,%r>' % (self.username,self.email,self.password_hash,self.balance)
 
     def verify(self,input_password):
         return self.password_hash == input_password

@@ -15,16 +15,15 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css'>
 		
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/perfect-scrollbar.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-        <link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="{{url_for('static', filename='css/fontello.css')}}">
-   		<link rel="stylesheet" href="{{url_for('static', filename='css/animation.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/animation.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.css')}}">
 		<link rel="stylesheet" href="{{url_for('static', filename='css/chosen.css')}}">
-        
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<link rel="stylesheet" href="css/ie.css">
@@ -54,6 +53,7 @@
 							<nav id="top-navigation" class="col-lg-7 col-md-7 col-sm-7">
 								<ul class="pull-left">
 									<li><a href="create_an_account.html">My Account</a></li>
+									<li><a href="/myshop">My Shop</a></li>
 									<li><a href="orders_list.html">List Order</a></li>
 									<li><a href="order_info.html">Checkout</a></li>
 									<li><a href="text_page.html">About Us</a></li>
@@ -129,7 +129,7 @@
 						<div class="row">
 							
 							<div id="logo" class="col-lg-4 col-md-4 col-sm-4">
-								<a href="home_v1.html"><img src="images/logo.png" alt="Logo"></a>
+								<a href="home_v1.html"><img src="/static/images/logo.png" alt="Logo"></a>
 							</div>
 							
 							<nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
@@ -148,7 +148,7 @@
                                                     
                                                     <table class="cart-table">
                                                     	<tr>
-                                                    		<td><img src="img/products/sample1.jpg" alt="product"></td>
+                                                    		<td><img src="/static/images/products/sample1.jpg" alt="product"></td>
                                                             <td>
                                                                 <h6>Lorem ipsum dolor</h6>
                                                                 <p>Product code PSBJ3</p>
@@ -159,7 +159,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                    		<td><img src="img/products/sample1.jpg" alt="product"></td>
+                                                    		<td><img src="/static/images/products/sample1.jpg" alt="product"></td>
                                                             <td>
                                                                 <h6>Lorem ipsum dolor</h6>
                                                                 <p>Product code PSBJ3</p>
@@ -170,7 +170,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                    		<td><img src="img/products/sample1.jpg" alt="product"></td>
+                                                    		<td><img src="/static/images/products/sample1.jpg" alt="product"></td>
                                                             <td>
                                                                 <h6>Lorem ipsum dolor</h6>
                                                                 <p>Product code PSBJ3</p>
@@ -540,7 +540,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample1.jpg" alt="Product1">
+												<img src="/static/images/products/sample1.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -586,7 +586,7 @@
 											
 											<div class="product-image">
 												<span class="product-tag">Sale</span>
-												<img src="img/products/sample2.jpg" alt="Product1">
+												<img src="/static/images/products/sample2.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -632,54 +632,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample3.jpg" alt="Product1">
-												<a href="products_page_v1.html" class="product-hover">
-													<i class="icons icon-eye-1"></i> Quick View
-												</a>
-											</div>
-											
-											<div class="product-info">
-												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
-												<span class="price">$281.00</span>
-												<div class="rating readonly-rating" data-score="4"></div>
-											</div>
-											
-											<div class="product-actions">
-												<span class="add-to-cart">
-													<span class="action-wrapper">
-														<i class="icons icon-basket-2"></i>
-														<span class="action-name">Add to cart</span>
-													</span >
-												</span>
-												<span class="add-to-favorites">
-													<span class="action-wrapper">
-														<i class="icons icon-heart-empty"></i>
-														<span class="action-name">Add to wishlist</span>
-													</span>
-												</span>
-												<span class="add-to-compare">
-													<span class="action-wrapper">
-														<i class="icons icon-docs"></i>
-														<span class="action-name">Add to Compare</span>
-													</span>
-												</span>
-											</div>
-											
-										</div>
-										<!-- /Carousel Item -->
-									</div>
-									<!-- /Slide -->
-									
-									
-									
-									
-									<!-- Slide -->
-									<div>
-										<!-- Carousel Item -->
-										<div class="product">
-											
-											<div class="product-image">
-												<img src="img/products/sample1.jpg" alt="Product1">
+												<img src="/static/images/products/sample3.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -726,7 +679,54 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample2.jpg" alt="Product1">
+												<img src="/static/images/products/sample1.jpg" alt="Product1">
+												<a href="products_page_v1.html" class="product-hover">
+													<i class="icons icon-eye-1"></i> Quick View
+												</a>
+											</div>
+											
+											<div class="product-info">
+												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+												<span class="price">$281.00</span>
+												<div class="rating readonly-rating" data-score="4"></div>
+											</div>
+											
+											<div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span >
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+											</div>
+											
+										</div>
+										<!-- /Carousel Item -->
+									</div>
+									<!-- /Slide -->
+									
+									
+									
+									
+									<!-- Slide -->
+									<div>
+										<!-- Carousel Item -->
+										<div class="product">
+											
+											<div class="product-image">
+												<img src="/static/images/products/sample2.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -774,7 +774,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample3.jpg" alt="Product1">
+												<img src="/static/images/products/sample3.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -852,7 +852,7 @@
 											
 											<div class="product-image">
 												<span class="product-tag">Sale</span>
-												<img src="img/products/sample4.jpg" alt="Product1">
+												<img src="/static/images/products/sample4.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -897,7 +897,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample5.jpg" alt="Product1">
+												<img src="/static/images/products/sample5.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -943,54 +943,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample6.jpg" alt="Product1">
-												<a href="products_page_v1.html" class="product-hover">
-													<i class="icons icon-eye-1"></i> Quick View
-												</a>
-											</div>
-											
-											<div class="product-info">
-												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
-												<span class="price">$281.00</span>
-												<div class="rating readonly-rating" data-score="4"></div>
-											</div>
-											
-											<div class="product-actions">
-												<span class="add-to-cart">
-													<span class="action-wrapper">
-														<i class="icons icon-basket-2"></i>
-														<span class="action-name">Add to cart</span>
-													</span >
-												</span>
-												<span class="add-to-favorites">
-													<span class="action-wrapper">
-														<i class="icons icon-heart-empty"></i>
-														<span class="action-name">Add to wishlist</span>
-													</span>
-												</span>
-												<span class="add-to-compare">
-													<span class="action-wrapper">
-														<i class="icons icon-docs"></i>
-														<span class="action-name">Add to Compare</span>
-													</span>
-												</span>
-											</div>
-											
-										</div>
-										<!-- /Carousel Item -->
-									</div>
-									<!-- /Slide -->
-									
-									
-									
-									
-									<!-- Slide -->
-									<div>
-										<!-- Carousel Item -->
-										<div class="product">
-											
-											<div class="product-image">
-												<img src="img/products/sample4.jpg" alt="Product1">
+												<img src="/static/images/products/sample6.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1037,7 +990,54 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample5.jpg" alt="Product1">
+												<img src="/static/images/products/sample4.jpg" alt="Product1">
+												<a href="products_page_v1.html" class="product-hover">
+													<i class="icons icon-eye-1"></i> Quick View
+												</a>
+											</div>
+											
+											<div class="product-info">
+												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+												<span class="price">$281.00</span>
+												<div class="rating readonly-rating" data-score="4"></div>
+											</div>
+											
+											<div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span >
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+											</div>
+											
+										</div>
+										<!-- /Carousel Item -->
+									</div>
+									<!-- /Slide -->
+									
+									
+									
+									
+									<!-- Slide -->
+									<div>
+										<!-- Carousel Item -->
+										<div class="product">
+											
+											<div class="product-image">
+												<img src="/static/images/products/sample5.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1085,7 +1085,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample6.jpg" alt="Product1">
+												<img src="/static/images/products/sample6.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1163,7 +1163,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample7.jpg" alt="Product1">
+												<img src="/static/images/products/sample7.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1208,7 +1208,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample8.jpg" alt="Product1">
+												<img src="/static/images/products/sample8.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1254,54 +1254,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample9.jpg" alt="Product1">
-												<a href="products_page_v1.html" class="product-hover">
-													<i class="icons icon-eye-1"></i> Quick View
-												</a>
-											</div>
-											
-											<div class="product-info">
-												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
-												<span class="price">$281.00</span>
-												<div class="rating readonly-rating" data-score="4"></div>
-											</div>
-											
-											<div class="product-actions">
-												<span class="add-to-cart">
-													<span class="action-wrapper">
-														<i class="icons icon-basket-2"></i>
-														<span class="action-name">Add to cart</span>
-													</span >
-												</span>
-												<span class="add-to-favorites">
-													<span class="action-wrapper">
-														<i class="icons icon-heart-empty"></i>
-														<span class="action-name">Add to wishlist</span>
-													</span>
-												</span>
-												<span class="add-to-compare">
-													<span class="action-wrapper">
-														<i class="icons icon-docs"></i>
-														<span class="action-name">Add to Compare</span>
-													</span>
-												</span>
-											</div>
-											
-										</div>
-										<!-- /Carousel Item -->
-									</div>
-									<!-- /Slide -->
-									
-									
-									
-									
-									<!-- Slide -->
-									<div>
-										<!-- Carousel Item -->
-										<div class="product">
-											
-											<div class="product-image">
-												<img src="img/products/sample7.jpg" alt="Product1">
+												<img src="/static/images/products/sample9.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1348,7 +1301,54 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample8.jpg" alt="Product1">
+												<img src="/static/images/products/sample7.jpg" alt="Product1">
+												<a href="products_page_v1.html" class="product-hover">
+													<i class="icons icon-eye-1"></i> Quick View
+												</a>
+											</div>
+											
+											<div class="product-info">
+												<h5><a href="products_page_v1.html">Lorem ipsum dolor sit amet</a></h5>
+												<span class="price">$281.00</span>
+												<div class="rating readonly-rating" data-score="4"></div>
+											</div>
+											
+											<div class="product-actions">
+												<span class="add-to-cart">
+													<span class="action-wrapper">
+														<i class="icons icon-basket-2"></i>
+														<span class="action-name">Add to cart</span>
+													</span >
+												</span>
+												<span class="add-to-favorites">
+													<span class="action-wrapper">
+														<i class="icons icon-heart-empty"></i>
+														<span class="action-name">Add to wishlist</span>
+													</span>
+												</span>
+												<span class="add-to-compare">
+													<span class="action-wrapper">
+														<i class="icons icon-docs"></i>
+														<span class="action-name">Add to Compare</span>
+													</span>
+												</span>
+											</div>
+											
+										</div>
+										<!-- /Carousel Item -->
+									</div>
+									<!-- /Slide -->
+									
+									
+									
+									
+									<!-- Slide -->
+									<div>
+										<!-- Carousel Item -->
+										<div class="product">
+											
+											<div class="product-image">
+												<img src="/static/images/products/sample8.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1396,7 +1396,7 @@
 										<div class="product">
 											
 											<div class="product-image">
-												<img src="img/products/sample9.jpg" alt="Product1">
+												<img src="/static/images/products/sample9.jpg" alt="Product1">
 												<a href="products_page_v1.html" class="product-hover">
 													<i class="icons icon-eye-1"></i> Quick View
 												</a>
@@ -1477,7 +1477,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample1-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample1-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1504,7 +1504,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample2-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample2-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1532,7 +1532,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample1-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample1-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1559,7 +1559,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample2-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample2-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1586,7 +1586,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample1-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample1-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1613,7 +1613,7 @@
 										
 											<div class="row">
 												<div class="col-lg-5 col-md-5 col-sm-5 news-thumbnail">
-													<a href="#"><img src="img/news/sample2-round.jpg" alt="News1"></a>
+													<a href="#"><img src="/static/images/news/sample2-round.jpg" alt="News1"></a>
 												</div>
 												<div class="col-lg-7 col-md-7 col-sm-7 news-content">
 													<h5><a href="blog_post.html">Lorem Ipsum</a></h5>
@@ -1667,7 +1667,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1675,7 +1675,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1683,7 +1683,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1691,7 +1691,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1699,7 +1699,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1707,7 +1707,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1715,7 +1715,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1723,7 +1723,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1731,7 +1731,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1739,7 +1739,7 @@
 									<!-- Slide -->
 									<div>
 										<div class="product">
-											<a href="#"><img src="img/brands/sample.jpg" alt="Brand1"></a>
+											<a href="#"><img src="/static/images/brands/sample.jpg" alt="Brand1"></a>
 										</div>
 									</div>
 									<!-- /Slide -->
@@ -1825,7 +1825,7 @@
                                 <table class="compare-table">
                                     
                                     <tr>
-                                        <td class="product-thumbnail"><img src="img/products/sample1.jpg" alt="Product1"></td>
+                                        <td class="product-thumbnail"><img src="/static/images/products/sample1.jpg" alt="Product1"></td>
                                         <td class="product-info">
                                             <p><a href="#">Lorem ipsum dolor sit amet</a></p>
                                             <a href="#" class="remove">Remove</a>
@@ -1833,7 +1833,7 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td class="product-thumbnail"><img src="img/products/sample2.jpg" alt="Product1"></td>
+                                        <td class="product-thumbnail"><img src="/static/images/products/sample2.jpg" alt="Product1"></td>
                                         <td class="product-info">
                                             <p><a href="#">Lorem ipsum dolor sit amet</a></p>
                                             <a href="#" class="remove">Remove</a>
@@ -1861,13 +1861,13 @@
 								<div class="sidebar-flexslider">
 									<ul class="slides">
 										<li>
-											<a href="#"><img src="img/sidebar-slide1.jpg" alt="Slide1"/></a>
+											<a href="#"><img src="/static/images/sidebar-slide1.jpg" alt="Slide1"/></a>
 										</li>
 										<li>
-											<a href="#"><img src="img/sidebar-slide2.jpg" alt="Slide1"/></a>
+											<a href="#"><img src="/static/images/sidebar-slide2.jpg" alt="Slide1"/></a>
 										</li>
 										<li>
-											<a href="#"><img src="img/sidebar-slide3.jpg" alt="Slide1"/></a>
+											<a href="#"><img src="/static/images/sidebar-slide3.jpg" alt="Slide1"/></a>
 										</li>
 									</ul>
 								</div>
@@ -1895,7 +1895,7 @@
 								<table class="bestsellers-table">
 									
 									<tr>
-										<td class="product-thumbnail"><a href="#"><img src="img/products/sample1.jpg" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="#"><img src="/static/images/products/sample1.jpg" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="#">Lorem ipsum dolor sit amet</a></p>
 											<span class="price">$550.00</span>
@@ -1903,7 +1903,7 @@
 									</tr>
 									
 									<tr>
-										<td class="product-thumbnail"><a href="#"><img src="img/products/sample2.jpg" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="#"><img src="/static/images/products/sample2.jpg" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="#">Lorem ipsum dolor sit amet</a></p>
 											<span class="price">$550.00</span>
@@ -1911,7 +1911,7 @@
 									</tr>
 									
 									<tr>
-										<td class="product-thumbnail"><a href="#"><img src="img/products/sample3.jpg" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="#"><img src="/static/images/products/sample3.jpg" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="#">Lorem ipsum dolor sit amet</a></p>
                                             <div class="rating readonly-rating" data-score="4"></div>
@@ -2023,7 +2023,17 @@
 							</div>
 							<!-- /Contact Us -->
 							
-
+							
+							<!-- Newsletter -->
+							<div class="col-lg-3 col-md-3 col-sm-6">
+								<form id="newsletter" action="http://inthe7heaven.com/homeshop-html/php/newsletter.php">
+									<h4>Newsletter Sign Up</h4>
+									<p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+									<input type="text" name="newsletter-email" placeholder="Enter your email address">
+									<input type="submit" name="newsletter-submit" value="Submit">
+								</form>
+							</div>
+							<!-- /Newsletter -->
 							
 						</div>
 						
@@ -2076,45 +2086,45 @@
 		
 		
 		<!-- JavaScript -->
-		<script src="js/modernizr.min.js"></script>
-		<script src="js/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+		<script src="{{url_for('static', filename='js/modernizr.min.js')}}"></script>
+		<script src="{{url_for('static', filename='js/jquery-1.11.0.min.js')}}"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery-ui.min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/jquery.raty.min.js')}}"></script>
 		
 		<!-- Scroll Bar -->
-		<script src="js/perfect-scrollbar.min.js"></script>
+		<script src="{{url_for('static', filename='js/perfect-scrollbar.min.js')}}"></script>
 		
 		<!-- Cloud Zoom -->
-		<script src="js/zoomsl-3.0.min.js"></script>
+		<script src="{{url_for('static', filename='js/zoomsl-3.0.min.js')}}"></script>
 		
 		<!-- FancyBox -->
-		<script src="js/jquery.fancybox.pack.js"></script>
+		<script src="{{url_for('static', filename='js/jquery.fancybox.pack.js')}}"></script>
 		
 		<!-- jQuery REVOLUTION Slider  -->
-		<script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
-		<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery.themepunch.plugins.min.js')}}"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery.themepunch.revolution.min.js')}}"></script>
 
 		<!-- FlexSlider -->
-		<script defer src="js/flexslider.min.js"></script>
+		<script defer src="{{url_for('static', filename='js/flexslider.min.js')}}"></script>
 		
 		<!-- IOS Slider -->
-		<script src = "js/jquery.iosslider.min.js"></script>
+		<script src = "{{url_for('static', filename='js/jquery.iosslider.min.js')}}"></script>
 		
 		<!-- noUi Slider -->
-		<script src="js/jquery.nouislider.min.js"></script>
+		<script src="{{url_for('static', filename='js/jquery.nouislider.min.js')}}"></script>
 		
 		<!-- Owl Carousel -->
-		<script src="js/owl.carousel.min.js"></script>
+		<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
 		
 		<!-- Cloud Zoom -->
-		<script src="js/zoomsl-3.0.min.js"></script>
+		<script src="{{url_for('static', filename='js/zoomsl-3.0.min.js')}}"></script>
 		
 		<!-- SelectJS -->
-        <script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+        <script src="{{url_for('static', filename='js/chosen.jquery.min.js')}}" type="text/javascript"></script>
         
         <!-- Main JS -->
-        <script defer src="js/bootstrap.min.js"></script>
-        <script src="js/main-script.js"></script>
+        <script defer src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='js/main-script.js')}}"></script>
         
 
 		

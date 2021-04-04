@@ -5,8 +5,7 @@ from marshmallow_sqlalchemy import ModelSchema
 
 class Catagory(mysql_db.Model):
     __tablename__ = 'catagories'
-    id = mysql_db.Column(mysql_db.String(20), primary_key = True)
-    catagory_code = mysql_db.Column(mysql_db.String(20))
+    catagory_code = mysql_db.Column(mysql_db.String(20),primary_key = True)
     catagory_name = mysql_db.Column(mysql_db.String(50))
     catagory_des = mysql_db.Column(mysql_db.String(100))
 
@@ -32,8 +31,7 @@ class CatagorySchema(ModelSchema):
     class Meta(ModelSchema.Meta):
         model = Catagory
         sqla_session = mysql_db.session
-
-    id = fields.String(dump_only=True)
+        
     catagory_code = fields.String()
     catagory_name = fields.String()
     catagory_des = fields.String()

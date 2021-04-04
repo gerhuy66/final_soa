@@ -7,7 +7,7 @@
     <title>UPLOAD PRODUCT</title>
 </head>
 <body>
-    <form action="/importProduct" method="post">
+    <form action="/importProduct" method="post" enctype="multipart/form-data">
         <label for="products_file">import products file</label>
         <input type="file" name="products_file">
         <input type="submit" value="submit">

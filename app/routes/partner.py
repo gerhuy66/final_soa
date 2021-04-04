@@ -7,7 +7,7 @@ from app.database import mysql_db
 
 @app.route('/partnerById/<partner_id>',methods=['GET','POST'])
 def getPartnerById(partner_id):
-    get_partid = partner_model.Partner.query.filter(partner_model.Partner.partner_id == partner_id).firt()
+    get_partid = partner_model.Partner.query.filter(partner_model.Partner.partner_id == partner_id).first()
     partid_schema = partner_model.PartnerSchema(many=True)
     partid = partid_schema.dump(get_partid)
     return make_response(jsonify({"PartnerID": partid}))

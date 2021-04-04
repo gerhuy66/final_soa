@@ -60,3 +60,13 @@ def confirmOrder():
 
     mailService.sendEmail("TPH market Notification",o_detail.first().order_user_email,"Your product"+data['productId']+" have been Confirmed!")
     return make_response(jsonify({"status":"200","message":"confirm Order Successful"}))
+
+@app.route("/trackingOrderStatus",methods=['POST'])
+def trackingOrderStatus():
+    data = request.json['order']
+    order_id = data['orderId']
+    o_d_query = Order_Detail.query.filter_by(order_id=order_id).all()
+    o_d_shcema = Order_DetailSchema(many=True)
+    o_ds = o_d_shcema.dump(o_d_query)
+    return make_response(jsonify({"orderDetail":o_ds}))
+

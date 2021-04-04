@@ -10,3 +10,4 @@ app/services/__pycache__/
 app/models/cart_model.py
 app/__pycache__/__init__.cpython-39.pyc
 .vscode/launch.json
+workspace.code-workspace

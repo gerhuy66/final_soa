@@ -2,7 +2,7 @@ from enum import unique
 from app.database import mysql_db
 from marshmallow import fields
 from marshmallow_sqlalchemy import ModelSchema
-
+import datetime
 
 class Shop(mysql_db.Model):
     __tablename__ = 'shops'
@@ -12,8 +12,9 @@ class Shop(mysql_db.Model):
     shop_name = mysql_db.Column(mysql_db.String(100))
     create_date = mysql_db.Column(mysql_db.String(100))
 
-    def __init__(self, shop_id,owner_id,shop_name,create_date):
-        self.shop_id = shop_id
+    def __init__(self,owner_id,shop_name,create_date):
+        now  = datetime.datetime.now()
+        self.shop_id ="pro"+now.strftime("%H%M%S%m%d%Y")
         self.owner_id = owner_id
         self.shop_name = shop_name
         self.create_date = create_date

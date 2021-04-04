@@ -2,7 +2,7 @@ from app.models.catagory_model import Catagory
 from app.database import mysql_db
 from marshmallow import fields
 from marshmallow_sqlalchemy import ModelSchema
-
+import datetime
 
 class Product(mysql_db.Model):
     __tablename__ = 'products'
@@ -16,15 +16,18 @@ class Product(mysql_db.Model):
     catagory_code = mysql_db.Column(mysql_db.String(20))
     shop_id = mysql_db.Column(mysql_db.String(20))
 
-    def __init__(self, p_id, p_name="", p_price=0, p_description="", p_location = "",c_id="",img_url=""):
-        self.p_id = p_id
+    def __init__(self, p_id="", p_name="", p_price=0, p_description="", p_location = "",c_id="",img_url="",catagory_code="",shop_id=""):
         self.p_name = p_name
         self.p_price = p_price
         self.p_description = p_description
         self.p_location = p_location
         self.c_id = c_id
-
+        self.catagory_code = catagory_code
+        self.shop_id = shop_id
+        
     def create(self):
+        now  = datetime.datetime.now()
+        self.p_id ="pro"+now.strftime("%H%M%S%m%d%Y")
         mysql_db.session.add(self)
         mysql_db.session.commit()
         return self
