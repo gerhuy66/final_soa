@@ -8,7 +8,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['PRODUCT_UPLOAD_FOLDER'] = PRODUCT_UPLOAD_FOLDER
 bootstrap = Bootstrap(app)
 
-from app.routes import views,product_view,order_view,myshop_view,orderWithBanking
+from app.routes import views,product_view,order_view,myshop_view,orderWithBanking, Test
 from app.models import User,Role
 from app.models import product_model,Order,Order_Detail,Shop,Partner,Shipping, Catagory, Location,Shop, Product
 app.secret_key = 'super secret key'

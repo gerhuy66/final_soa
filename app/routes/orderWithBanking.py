@@ -16,7 +16,7 @@ def orderWithBanking():
 	{"p_id":"ip14","shop_id":"shop1", 'amount': 1},
     {"p_id":"ip15","shop_id":"shop1", 'amount': 2}
 	],
-    "order_user_email":"duchuy1096@gmail.com",
+    "user_do_order":"duchuy1096@gmail.com",
     "ibanking_payment_email":"duchuy1096@gmail.com",
     'ship_fee': 20000,
 	"total_product": 9990000,
@@ -24,21 +24,23 @@ def orderWithBanking():
 }
     if request.method == 'POST':
         
+        status_payment = request.json.get("status_payment")
+        user_do_order = request.json.get("user_do_order")
+        ship_fee = request.json.get("ship_fee")
+        products = request.json.get("products")
+        total_product = request.json.get("total_product")
+        products = request.json.get("products")
+        p_id = request.json.get("p_id")
+        ibanking_payment_email = request.json.get("ibanking_payment_email")
 
         if Order_paid_banking['status_payment'] == 'paid': 
-            time_order = datetime.datetime.now()
-            date_time = time_order.strftime("%H%M%S%d%m%Y")
 
             #add order table
-            order = Order(order_id = date_time, status_shipping = 'wait', status_payment = Order_paid_banking['status_payment'], create_dt = time_order, user_do_order = Order_paid_banking['order_user_email'], ship_fee = Order_paid_banking['ship_fee'], total_product = Order_paid_banking['total_product'])
-            mysql_db.session.add(order)
-            mysql_db.session.commit()
+            order = Order(status_shipping = 'wait', status_payment = status_payment, user_do_order = user_do_order, ship_fee = ship_fee, total_product = total_product).create()
 
             #add order_detail table
-            for item in Order_paid_banking['products']:
-                order_detail = Order_Detail(p_id = item['p_id'], order_id = date_time, shop_id = item['shop_id'], amount = item['amount'], status_shipping = 'wait', order_user_email = Order_paid_banking['order_user_email'], ibanking_payment_email = Order_paid_banking['ibanking_payment_email'])
-                mysql_db.session.add(order_detail)
-                mysql_db.session.commit()
+            for item in products:
+                order_detail = Order_Detail(p_id = item['p_id'], shop_id = item['shop_id'], amount = item['amount'], status_shipping = 'wait', order_user_email = user_do_order, ibanking_payment_email = ibanking_payment_email).create()
 
             return make_response(jsonify({"status":200, "message":"order completed"}))
 

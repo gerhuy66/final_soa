@@ -9,5 +9,8 @@ from app.database import mysql_db
 import datetime
 
 @app.route('/test', methods=['GET','POST'])
-def orderWithBanking():
-    return 'test'
+def test():
+    if request.method == "POST":
+        products = request.json.get("products")
+        return str(len(products))
+    return 'method get'

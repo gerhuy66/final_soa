@@ -3,6 +3,7 @@ from app import services
 from app.database import mysql_db
 from marshmallow import fields
 from marshmallow_sqlalchemy import ModelSchema
+import datetime
 
 
 class Order_Detail(mysql_db.Model):
@@ -15,9 +16,8 @@ class Order_Detail(mysql_db.Model):
     order_user_email = mysql_db.Column(mysql_db.String(100))
     ibanking_payment_email = mysql_db.Column(mysql_db.String(100), server_default = 'COD') #thanh toán ibanking thì lưu mail, mặc định là COD: thu tiền tiền mặt
 
-    def __init__(self, p_id, order_id, shop_id, amount, status_shipping, order_user_email, ibanking_payment_email):
+    def __init__(self, p_id, shop_id, amount, status_shipping, order_user_email, ibanking_payment_email):
         self.p_id = p_id
-        self.order_id = order_id
         self.shop_id = shop_id
         self.amount = amount
         self.status_shipping = status_shipping
@@ -25,9 +25,21 @@ class Order_Detail(mysql_db.Model):
         self.ibanking_payment_email = ibanking_payment_email
 
     def create(self):
+        now = datetime.datetime.now()
+        self.order_id = "order" + now.strftime("%H%M%S%d%m%Y")
         mysql_db.session.add(self)
         mysql_db.session.commit()
         return self
+
+    def to_json(self):
+        return {
+            "p_id":self.p_id,
+            "order_id":self.order_id,
+            "shop_id":self.shop_id,
+            "amount":self.amount,
+            "status_shipping":self.status_shipping,
+            "ibanking_payment_email":self.status_payment,
+        }
 
     def __repr__(self):
         return '<Order_Detail %r, %r, %r, %r, %r, %r, %r>' % (self.p_id, self.order_id, self.shop_id, self.amount, self.status_shipping, self.order_user_email, self.ibanking_payment_email)

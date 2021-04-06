@@ -2,31 +2,33 @@ from re import S
 from app.database import mysql_db
 from marshmallow import fields
 from marshmallow_sqlalchemy import ModelSchema
-
+import datetime
 
 class Order(mysql_db.Model):
     __tablename__ = 'orders'
     order_id = mysql_db.Column(mysql_db.String(20), primary_key = True)
     status_shipping = mysql_db.Column(mysql_db.String(20))
-    status_payment = mysql_db.Column(mysql_db.String(20)
+    status_payment = mysql_db.Column(mysql_db.String(20))
     create_dt = mysql_db.Column(mysql_db.String(100))
     user_do_order = mysql_db.Column(mysql_db.String(20))
     ship_fee = mysql_db.Column(mysql_db.Float())
     total_product = mysql_db.Column(mysql_db.Float())
 
-    def __init__(self, order_id, status_shipping, status_payment, create_dt, user_do_order, ship_fee, total_product):
-        self.order_id = order_id
+    def __init__(self, status_shipping, status_payment, user_do_order, ship_fee, total_product):
+
 
         self.status_shipping = status_shipping
         self.status_payment = status_payment
 
-        self.create_dt =create_dt
         self.user_do_order = user_do_order
 
         self.ship_fee = ship_fee
         self.total_product = total_product
 
     def create(self):
+        now = datetime.datetime.now()
+        self.order_id = "order" + now.strftime("%H%M%S%d%m%Y")
+        self.create_dt = now
         mysql_db.session.add(self)
         mysql_db.session.commit()
         return self
