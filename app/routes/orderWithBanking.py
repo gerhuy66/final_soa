@@ -9,15 +9,13 @@ from app.forms import forms
 @app.route('/orderwithbanking', methods=['GET','POST'])
 def orderWithBanking():
     inputOrder = {
+    "status":"paid",
 	"products":[
 	{"p_id":"ip14","shop_id":"shop1","p_name":"iphone 14","product_des":"best phone ever"},
 	{"p_id":"ip15","shop_id":"shop1","p_name":"iphone 15","product_des":"best phone ever"},
 	],
-	"totalCost":"9990000",
-	"status":"paid",
-	"paymentDatetime":"01042021",
-	"paymentUser":"duchuy1096@gmail.com",
-	"paymentId":"pay01042021huy"
+    "ibanking_payment_email":"duchuy1096@gmail.com",
+	"total_product":"9990000",
 }
     if request.method == 'POST':
         return make_response(jsonify({"status":200, "message":"order completed"}))
