@@ -10,15 +10,17 @@ class Order_Detail(mysql_db.Model):
     p_id = mysql_db.Column(mysql_db.String(20), primary_key = True)
     order_id = mysql_db.Column(mysql_db.String(20), primary_key = True)
     shop_id = mysql_db.Column(mysql_db.String(20),primary_key = False)
-    status = mysql_db.Column(mysql_db.String(20), server_default = 'wait')
+    amount = mysql_db.Column(mysql_db.Integer())
+    status_shipping = mysql_db.Column(mysql_db.String(20), server_default = 'wait')
     order_user_email = mysql_db.Column(mysql_db.String(100))
     ibanking_payment_email = mysql_db.Column(mysql_db.String(100), server_default = 'COD') #thanh toán ibanking thì lưu mail, mặc định là COD: thu tiền tiền mặt
 
-    def __init__(self, p_id,order_id,shop_id,status,order_user_email, ibanking_payment_email):
+    def __init__(self, p_id, order_id, shop_id, amount, status_shipping, order_user_email, ibanking_payment_email):
         self.p_id = p_id
         self.order_id = order_id
         self.shop_id = shop_id
-        self.status = status
+        self.amount = amount
+        self.status_shipping = status_shipping
         self.order_user_email = order_user_email
         self.ibanking_payment_email = ibanking_payment_email
 
@@ -28,7 +30,7 @@ class Order_Detail(mysql_db.Model):
         return self
 
     def __repr__(self):
-        return '<Order_Detail %r, %r, %r, %r, %r, %r>' % (self.p_id,self.order_id,self.shop_id, self.status, self.order_user_email, self.ibanking_payment_email)
+        return '<Order_Detail %r, %r, %r, %r, %r, %r, %r>' % (self.p_id, self.order_id, self.shop_id, self.amount, self.status_shipping, self.order_user_email, self.ibanking_payment_email)
 
 class Order_DetailSchema(ModelSchema):
     class Meta(ModelSchema.Meta):
@@ -38,6 +40,7 @@ class Order_DetailSchema(ModelSchema):
     p_id = fields.String(dump_only=True)
     order_id = fields.String()
     shop_id = fields.String()
-    status = fields.String()
+    amount = fields.Integer()
+    status_shipping = fields.String()
     order_user_email = fields.String()
     ibanking_payment_email = fields.String()
