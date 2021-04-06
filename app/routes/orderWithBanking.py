@@ -11,10 +11,10 @@ import datetime
 @app.route('/orderwithbanking', methods=['GET','POST'])
 def orderWithBanking():
     Order_paid_banking = {
-    "status":"paid",
+    "status_payment":"paid",
 	"products":[
 	{"p_id":"ip14","shop_id":"shop1"},
-	{"p_id":"ip15","shop_id":"shop1"},
+    {"p_id":"ip14","shop_id":"shop1"}
 	],
     "order_user_email":"duchuy1096@gmail.com",
     "ibanking_payment_email":"duchuy1096@gmail.com",
@@ -25,18 +25,18 @@ def orderWithBanking():
     if request.method == 'POST':
         
 
-        if Order_paid_banking['status'] == 'paid': 
+        if Order_paid_banking['status_payment'] == 'paid': 
             time_order = datetime.datetime.now()
             date_time = time_order.strftime("%H%M%S%d%m%Y")
 
             #add order table
-            order = Order(order_id = date_time, status = 'wait', create_dt = time_order, user_do_order = Order_paid_banking['order_user_email'], ship_fee = Order_paid_banking['ship_fee'], total_product = Order_paid_banking['total_product'])
+            order = Order(order_id = date_time, status_shipping = 'wait', create_dt = time_order, user_do_order = Order_paid_banking['order_user_email'], ship_fee = Order_paid_banking['ship_fee'], total_product = Order_paid_banking['total_product'])
             mysql_db.session.add(order)
             mysql_db.session.commit()
 
             #add order_detail table
             for item in Order_paid_banking['products']:
-                order_detail = Order_Detail(p_id = item['p_id'], order_id = date_time, shop_id = item['shop_id'], status = 'wait', order_user_email = Order_paid_banking['order_user_email'], ibanking_payment_email = Order_paid_banking['ibanking_payment_email'])
+                order_detail = Order_Detail(p_id = item['p_id'], order_id = date_time, shop_id = item['shop_id'], status_shipping = 'wait', order_user_email = Order_paid_banking['order_user_email'], ibanking_payment_email = Order_paid_banking['ibanking_payment_email'])
                 mysql_db.session.add(order_detail)
                 mysql_db.session.commit()
 
