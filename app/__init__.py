@@ -8,7 +8,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['PRODUCT_UPLOAD_FOLDER'] = PRODUCT_UPLOAD_FOLDER
 bootstrap = Bootstrap(app)
 
-from app.routes import views,product_view,order_view,myshop_view
+from app.routes import views,product_view,order_view,myshop_view,order_tracking_view
 from app.models import User,Role
 from app.models import Product,Order,Order_Detail,Shop,Partner,Shipping, Catagory, Location,Shop
 app.secret_key = 'super secret key'
@@ -27,4 +27,4 @@ mysql_db.create_all()
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=mysql_db,Shop = Shop, Location = Location,Catagory= Catagory, User = User.User, Role = Role.Role, Product = Product,Shipping = Shipping, Order = Order, Order_Detail = Order_Detail)
+    return dict(db=mysql_db,Partner = Partner,Shop = Shop, Location = Location,Catagory= Catagory, User = User.User, Role = Role.Role, Product = Product,Shipping = Shipping, Order = Order, Order_Detail = Order_Detail)
