@@ -8,7 +8,7 @@ class Product(mysql_db.Model):
     __tablename__ = 'products'
     p_id = mysql_db.Column(mysql_db.String(20), primary_key = True)
     p_name = mysql_db.Column(mysql_db.String(20))
-    p_price = mysql_db.Column(mysql_db.Integer)
+    p_price = mysql_db.Column(mysql_db.String(30))
     p_description = mysql_db.Column(mysql_db.String(500))
     p_location = mysql_db.Column(mysql_db.String(50))
     c_id = mysql_db.Column(mysql_db.String(20))
@@ -16,7 +16,7 @@ class Product(mysql_db.Model):
     catagory_code = mysql_db.Column(mysql_db.String(20))
     shop_id = mysql_db.Column(mysql_db.String(20))
 
-    def __init__(self, p_id="", p_name="", p_price=0, p_description="", p_location = "",c_id="",img_url="",catagory_code="",shop_id=""):
+    def __init__(self, p_name="", p_price=0, p_description="", p_location = "",c_id="",img_url="",catagory_code="",shop_id=""):
         self.p_name = p_name
         self.p_price = p_price
         self.p_description = p_description
@@ -24,11 +24,17 @@ class Product(mysql_db.Model):
         self.c_id = c_id
         self.catagory_code = catagory_code
         self.shop_id = shop_id
+        self.img_url = img_url
         
     def create(self):
         now  = datetime.datetime.now()
         self.p_id ="pro"+now.strftime("%H%M%S%m%d%Y")
         mysql_db.session.add(self)
+        mysql_db.session.commit()
+        return self
+
+    def delete(self):
+        mysql_db.session.delete(self)
         mysql_db.session.commit()
         return self
 
