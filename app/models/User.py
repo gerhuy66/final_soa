@@ -12,21 +12,22 @@ class User(UserMixin, mysql_db.Model):
     username = mysql_db.Column(mysql_db.String(64), unique=True, index=True)
     password_hash = mysql_db.Column(mysql_db.String(128))
     balance = mysql_db.Column(mysql_db.Float)
-
+    role_value = mysql_db.Column(mysql_db.Integer)
 
     def create(self):
         mysql_db.session.add(self)
         mysql_db.session.commit()
         return self
 
-    def __init__(self, username, email,password_hash,balance):
+    def __init__(self, username, email,password_hash,balance,role_value=2):
         self.username = username
         self.email = email
         self.password_hash = password_hash
         self.balance = balance
-
+        self.role_value = role_value
+    
     def __repr__(self):
-        return '<User %r,%r%r,%r>' % (self.username,self.email,self.password_hash,self.balance)
+        return '<User %r,%r%r,%r, %r>' % (self.username,self.email,self.password_hash,self.balance,self.role_value)
 
     def verify(self,input_password):
         return self.password_hash == input_password
@@ -41,3 +42,4 @@ class UserSchema(ModelSchema):
     username = fields.String(required=False)
     password_hash = fields.String(required=True)
     balance = fields.Number(required=True)
+    role_value = fields.Number(required=False)
