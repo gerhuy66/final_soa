@@ -133,3 +133,16 @@ async function loadDataHistory()
         $("#historyBox").append(line);
     })
 }
+
+async function loadPartner()
+{
+    let rp = await axios.post("/getallpartner");
+    let datas = rp.data.his
+    let line = `<div>Partner ID--User ID--Status</div>`
+    $("#historyBox").append(line);
+    datas.forEach(function(item){
+        let line = `<div>${item.partner_id}--${item.user_id}--${item.status}</div>`
+        $("#historyBox").append(line);
+    })
+}
+

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- LEFT SIDEBAR -->
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						<li><a href="approvepart.html" class=""><i class="lnr lnr-alarm"></i> <span>Duyệt Partner</span></a></li>
+						<li><a href="admin.html" class="active"><i class="lnr lnr-dice"></i> <span>Quản lý User</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<h3 class="page-title">Admin</h3>
+					<div class="row">
+						<div class="col-md-6">
+				{% block content %}
+   			 <div id ="partnerBox" style="width: 80vw;height:50vw;background-color: rgb(179, 248, 250);">
+
+
+   			 </div>
+			{% endblock %}
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+	</div>
+	<!-- END WRAPPER -->
+</body>
