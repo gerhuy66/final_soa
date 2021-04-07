@@ -16,7 +16,7 @@ def getPartnerById(partner_id):
 def getAllPartner():
     get_part = partner_model.Partner.query.all()
     part_schema = partner_model.PartnerSchema(many=True)
-    part = part_schema.dump(get_part)
+    part = part_schema.dump(get_part) 
     return make_response(jsonify({"Partner": part}))
 
 @app.route('/approveid',methods=['GET','POST'])
@@ -26,3 +26,13 @@ def approve_id():
     part = part_query.first()
     part_query.update(dict(status="Approved"))
     return make_response(jsonify({"Status": "Success"}))
+
+@app.route('/deletePartnerbyId', methods = ['GET', 'POST'])
+def deletePartnerbyId():
+    if request.method == 'POST':
+        partner_id = 'partner1' #testing
+        delete_partner = partner_model.Partner.query.filter(partner_model.Partner.partner_id == partner_id).first()
+        mysql_db.session.delete(delete_partner)
+        mysql_db.session.commit()
+
+        return make_response(jsonify({"Delete Partner": "Success"}))
